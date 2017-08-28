@@ -11,18 +11,25 @@
  * \date <August 28, 2017>
  */
  
+ 
+ 
+ 
+ 
 int main() {
 	using namespace std;
+	
 	
 	// open input file
 	ifstream inFile;
 	inFile.open("numbers.txt");
+	
 	
 	// Create an array and set every value to 0
 	int* array = new int[60];
 	for (int i = 0; i<60; i++){
 	array[i]=0;
 	}
+	
 	
 	// for each possible number (1-59)
 	for (int i = 1; i<=59; i++){
@@ -48,11 +55,11 @@ int main() {
 			array[b6] ++;
 
 
-			}//end while
+		}//end while
 			
 			
-		//output index,value
-		cout << i << ":" << "\t" << array[i] << "\n" << endl;
+		//output index, tab, value, line
+		cout << i << "\t" << array[i] << endl;
 
 	}//end for
 	
