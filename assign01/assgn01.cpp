@@ -7,9 +7,10 @@
  * Program to analyze the frequency of each number in PowerBall lottery
  * drawings.
  *
- * \authors <your names here>
- * \date <date code was authored>
+ * \authors <Charley Burtwistle, Chase Stone>
+ * \date <August 28, 2017>
  */
+ 
 int main() {
 	using namespace std;
 	
@@ -17,29 +18,47 @@ int main() {
 	ifstream inFile;
 	inFile.open("numbers.txt");
 	
-	// read numbers, one line at a time
-	int b1, b2, b3, b4, b5, b6;
-	while( inFile >> b1 ) {
-		inFile >> b2;
-		inFile >> b3;
-		inFile >> b4;
-		inFile >> b5;
-		inFile >> b6;
-
-		// TODO: replace this output code with your code to count
-		// the frequency of each number
-		cout << b1 << "\t"
-		     << b2 << "\t"
-		     << b3 << "\t"
-		     << b4 << "\t"
-		     << b5 << "\t"
-		     << b6 << endl;
+	// Create an array and set every value to 0
+	int* array = new int[60];
+	for (int i = 0; i<60; i++){
+	array[i]=0;
 	}
+	
+	// for each possible number (1-59)
+	for (int i = 1; i<=59; i++){
 
+	
+		// read numbers, one line at a time
+		int b1, b2, b3, b4, b5, b6;
+		while( inFile >> b1 ) {
+			inFile >> b2;
+			inFile >> b3;
+			inFile >> b4;
+			inFile >> b5;
+			inFile >> b6;
+			
+			
+			//every time a number appears,
+			//add one to it's value in the array
+			array[b1] ++;
+			array[b2] ++;
+			array[b3] ++;
+			array[b4] ++;
+			array[b5] ++;
+			array[b6] ++;
+
+
+			}//end while
+			
+			
+		//output index,value
+		cout << i << ":" << "\t" << array[i] << "\n" << endl;
+
+	}//end for
+	
+	// clean up
+	delete array;
 	inFile.close();
 
-	// TODO: output the frequency for each number, as described in the
-	// assignment
-
 	return EXIT_SUCCESS;
-}
+}// end main
