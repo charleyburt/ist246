@@ -31,3 +31,7 @@ Results
 6	217
 
 ...
+
+Check
+-----------
+`$ diff -u <(./assgn01) results.txt`
