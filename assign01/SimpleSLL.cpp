@@ -18,7 +18,7 @@ SimpleSLL::~SimpleSLL ()
  * Add i to front of list.
  */
 void
-SimpleSLL::add (int i)
+SimpleSLL::add (std::string i)
 {
 // create new node
   SimpleSLL::Node * pT = new SimpleSLL::Node (i, pHead);
@@ -57,7 +57,7 @@ SimpleSLL::clear ()
  * Search the list for integer i.
  */
 int
-SimpleSLL::contains (int i) const 
+SimpleSLL::contains (std::string i) const 
 {
 // create cursors
   int idx = -1;
@@ -83,7 +83,7 @@ SimpleSLL::contains (int i) const
 /*
  * Get value at location idx.
  */
-int
+std::string
 SimpleSLL::get (unsigned idx) const 
 {
 // initialize cursor
@@ -108,7 +108,7 @@ SimpleSLL::get (unsigned idx) const
 /*
  * Remove node at location idx.
  */
-int
+std::string
 SimpleSLL::remove (unsigned idx)
 {
 // initialize cursors
@@ -128,7 +128,7 @@ SimpleSLL::remove (unsigned idx)
     }
 
 // save value of node we're deleting
-  int d = pCurr->data;
+  std::string d = pCurr->data;
 
 // first element? change head pointer
   if (pCurr == pHead)
@@ -183,7 +183,7 @@ SimpleSLL::print () const
  * Change the value at location idx to i.
  */
 void
-SimpleSLL::set (unsigned idx, int i)
+SimpleSLL::set (unsigned idx, std::string i)
 {
 // initialize cursor
   SimpleSLL::Node * pCurr = pHead;

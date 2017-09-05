@@ -7,7 +7,7 @@
 //-----------------------------------------------------------
 
 /**
- * Class representing a simple singly-linked list of integers.
+ * Class representing a simple singly-linked list of strings.
  */
 class SimpleSLL
 {
@@ -35,16 +35,16 @@ private:
  * Initializing constructor. Make a new Node with the specified
  * data and next pointer values.
  *
- * \param d Integer data value for the node.
+ * \param d string data value for the node.
  * \param pN Pointer to the next Node in the list, or 0 if
  * this is the last Node.
  */
-    Node (int d, Node * pN):data (d), pNext (pN)
+    Node (std::string d, Node * pN):data (d), pNext (pN)
     {
     }
 
-    int data;
-	   /**< Integer payload of the Node. */
+    std::string data;
+	   /**< String payload of the Node. */
 
     Node *pNext;
 	     /**< Pointer to the next Node in the list, or 0 if
@@ -70,7 +70,7 @@ SimpleSLL ():pHead (0), n (0u)
  *
  * \param i Value to add to the list.
  */
-  void add (int i);
+  void add (std::string i);
 
 /**
  * Remove all the elements of the list.
@@ -80,12 +80,12 @@ SimpleSLL ():pHead (0), n (0u)
 /**
  * Determine if a specific value is in the list.
  *
- * \param i Integer value to search for.
+ * \param i string value to search for.
  *
  * \return Index of first occurrence of i in the list, or
  * -1 if it is not in the list.
  */
-  int contains (int i) const;
+  int contains (std::string i) const;
 
 /**
  * Get the value at a specified location.
@@ -94,7 +94,7 @@ SimpleSLL ():pHead (0), n (0u)
  *
  * \return Value at location idx in the list
  */
-  int get (unsigned idx) const;
+  std::string get (unsigned idx) const;
 
 /**
  * Determine if the list is empty.
@@ -113,7 +113,7 @@ SimpleSLL ():pHead (0), n (0u)
  *
  * \return Value that was in location idx.
  */
-  int remove (unsigned idx);
+  std::string remove (unsigned idx);
 
 /**
  * Print the contents of this list to the standard output.
@@ -127,12 +127,12 @@ SimpleSLL ():pHead (0), n (0u)
  *
  * \param i New value to place in position idx.
  */
-  void set (unsigned idx, int i);
+  void set (unsigned idx, std::string i);
 
 /**
- * Get the number of integers in the list.
+ * Get the number of strings in the list.
  *
- * \return The number of integers in the list.
+ * \return The number of std::strings in the list.
  */
   unsigned size () const
   {

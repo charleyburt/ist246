@@ -9,9 +9,9 @@ int main() {
 
   SimpleSLL list;
 
-  for (int i = 0; i < 10; i++) {
-    list.add(i);
-  }
+
+    list.add("HelloWorld");
+  
 
   cout << "Initial list has " << list.size() << " nodes:" << endl;
   list.print();
