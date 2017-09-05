@@ -13,13 +13,20 @@ int main() {
   //open input file
   ifstream inFile;
   inFile.open("dictionary.txt");
-
-
-    list.add("HelloWorld");
+  
+  string all ;
+  while( inFile >> all){
+    list.add(all);
+  }
   
 
-  cout << "Initial list has " << list.size() << " nodes:" << endl;
+
+
+  
+
+
   list.print();
+  cout << "Initial list has " << list.size() << " nodes:" << endl;
   inFile.close();
   
   return EXIT_SUCCESS;
