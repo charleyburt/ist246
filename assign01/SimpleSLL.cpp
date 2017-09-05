@@ -57,7 +57,7 @@ SimpleSLL::clear ()
  * Search the list for integer i.
  */
 int
-SimpleSLL::contains (int i) const const
+SimpleSLL::contains (int i) const 
 {
 // create cursors
   int idx = -1;
@@ -84,7 +84,7 @@ SimpleSLL::contains (int i) const const
  * Get value at location idx.
  */
 int
-SimpleSLL::get (unsigned idx) const const
+SimpleSLL::get (unsigned idx) const 
 {
 // initialize cursor
   SimpleSLL::Node * pCurr = pHead;
@@ -153,7 +153,7 @@ SimpleSLL::remove (unsigned idx)
  * Print the list to standard output
  */
 void
-SimpleSLL::print () const const
+SimpleSLL::print () const 
 {
   using namespace std;
 
