@@ -78,9 +78,7 @@ int main() {
   
 
 
-  cout << "Getting a Random string " << list.getRandom() << endl;
-  cout << "Getting a Random string " << list.getRandom() << endl;
-  cout << "Initial list has " << list.size() << " nodes:" << endl;
+
   inFile.close();
   
   return EXIT_SUCCESS;
