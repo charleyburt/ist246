@@ -95,6 +95,15 @@ SimpleSLL ():pHead (0), n (0u)
  * \return Value at location idx in the list
  */
   std::string get (unsigned idx) const;
+  
+  /**
+ * Get the value at a random location.
+ *
+ * 
+ *
+ * \return Value at random location
+ */
+  std::string getRandom () const;
 
 /**
  * Determine if the list is empty.
@@ -132,7 +141,7 @@ SimpleSLL ():pHead (0), n (0u)
 /**
  * Get the number of strings in the list.
  *
- * \return The number of std::strings in the list.
+ * \return The number of strings in the list.
  */
   unsigned size () const
   {

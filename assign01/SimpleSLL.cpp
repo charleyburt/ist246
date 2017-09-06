@@ -106,6 +106,28 @@ SimpleSLL::get (unsigned idx) const
 }
 
 /*
+ * Get the value at a random location
+ */
+std::string
+SimpleSLL::getRandom () const 
+{
+// initialize cursor
+  SimpleSLL::Node * pCurr = pHead;
+
+//get a random number between 0 and the size of the list
+  unsigned random = rand() % n + 1;
+
+// iterate cursor to postion
+  for (unsigned i = 0u; i < random && pCurr != 0; i++)
+    {
+      pCurr = pCurr->pNext;
+    }
+
+// return requested value (a random string)
+  return pCurr->data;
+}
+
+/*
  * Remove node at location idx.
  */
 std::string
