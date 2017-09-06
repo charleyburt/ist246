@@ -115,7 +115,7 @@ SimpleSLL::getRandom () const
   SimpleSLL::Node * pCurr = pHead;
 
 //get a random number between 0 and the size of the list
-  unsigned random = rand() % n + 1;
+  unsigned random = rand() % n;
 
 // iterate cursor to postion
   for (unsigned i = 0u; i < random && pCurr != 0; i++)
