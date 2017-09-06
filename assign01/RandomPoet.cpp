@@ -11,7 +11,7 @@ int main() {
   SimpleSLL list;
   
   cout <<"Welcome to the random poetry generator!" <<
-         "Please wait while the dictiionary is loaded." << endl;
+         "Please wait while the dictiionary is loaded. \n" << endl;
   
   //open input file
   ifstream inFile;
@@ -24,6 +24,9 @@ int main() {
   
   
   int again = 1;
+  do{
+    
+
   int lines;
   cout << "Let's make some poetry, dude! Enter the number of lines:";
   cin >> lines;
@@ -43,15 +46,31 @@ int main() {
   cout << "Please Enter an int." << std::endl;
   cin.clear();
   cin.ignore(256,'\n');
-  cin >> lines;
+  cin >> words;
     }
   
+  cout << "\nHere's your poem man: \n" << endl;
+  for (int i = 0; i<lines; i++){
+    for (int j = 0; j<words; j++){
+        cout << list.getRandom() << " ";
+      
+    }
+    cout << "\n";
+  }
 
   
-
-  cout << "Would you like to make another poem? Enter 1 for yes, 0 for no: ";
+  do{
+  cout << "\nWould you like to make another poem? Enter 1 for yes, 0 for no: ";
   cin >> again;
- 
+    while (cin.fail()) {
+    cout << "Please Enter an int." << std::endl;
+    cin.clear();
+    cin.ignore(256,'\n');
+    cin >> again;
+    } // make sure its an int
+  }while(again!= 0 && again!=1); //make sure its "0" or "1"
+  
+  }while(again==1);
 
 
 
