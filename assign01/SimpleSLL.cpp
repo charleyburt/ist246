@@ -1,6 +1,8 @@
 #include <climits>
 #include <iostream>
 #include "SimpleSLL.h"
+#include <cstdlib>
+#include <ctime>
 
 //-----------------------------------------------------------
 // function implementations
@@ -13,6 +15,7 @@ SimpleSLL::~SimpleSLL ()
 {
   clear ();
 }
+
 
 /*
  * Add i to front of list.
@@ -113,6 +116,7 @@ SimpleSLL::getRandom () const
 {
 // initialize cursor
   SimpleSLL::Node * pCurr = pHead;
+
 
 //get a random number between 0 and the size of the list
   unsigned random = rand() % n;

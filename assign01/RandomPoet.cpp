@@ -3,12 +3,17 @@
 #include <iostream>
 #include <stdexcept>
 #include <fstream>
+#include <ctime>
+
 
 int main() {
+  
 
   using namespace std;
 
   SimpleSLL list;
+  
+  srand(time(0));
   
   cout <<"Welcome to the random poetry generator!" <<
          "Please wait while the dictiionary is loaded. \n" << endl;

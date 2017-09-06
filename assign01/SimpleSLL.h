@@ -154,4 +154,6 @@ private:
 			       the list is empty. */
 
   unsigned n;		    /**< Number of integers in the list. */
+  
+
 };
