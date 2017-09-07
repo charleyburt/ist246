@@ -1,6 +1,8 @@
 #include <climits>
 #include <iostream>
 #include "SimpleSLL.h"
+#include <cstdlib>
+#include <ctime>
 
 //-----------------------------------------------------------
 // function implementations
@@ -14,11 +16,12 @@ SimpleSLL::~SimpleSLL ()
   clear ();
 }
 
+
 /*
  * Add i to front of list.
  */
 void
-SimpleSLL::add (int i)
+SimpleSLL::add (std::string i)
 {
 // create new node
   SimpleSLL::Node * pT = new SimpleSLL::Node (i, pHead);
@@ -57,7 +60,7 @@ SimpleSLL::clear ()
  * Search the list for integer i.
  */
 int
-SimpleSLL::contains (int i) const const
+SimpleSLL::contains (std::string i) const 
 {
 // create cursors
   int idx = -1;
@@ -83,8 +86,8 @@ SimpleSLL::contains (int i) const const
 /*
  * Get value at location idx.
  */
-int
-SimpleSLL::get (unsigned idx) const const
+std::string
+SimpleSLL::get (unsigned idx) const 
 {
 // initialize cursor
   SimpleSLL::Node * pCurr = pHead;
@@ -106,9 +109,32 @@ SimpleSLL::get (unsigned idx) const const
 }
 
 /*
+ * Get the value at a random location
+ */
+std::string
+SimpleSLL::getRandom () const 
+{
+// initialize cursor
+  SimpleSLL::Node * pCurr = pHead;
+
+
+//get a random number between 0 and the size of the list
+  unsigned random = rand() % n;
+
+// iterate cursor to postion
+  for (unsigned i = 0u; i < random && pCurr != 0; i++)
+    {
+      pCurr = pCurr->pNext;
+    }
+
+// return requested value (a random string)
+  return pCurr->data;
+}
+
+/*
  * Remove node at location idx.
  */
-int
+std::string
 SimpleSLL::remove (unsigned idx)
 {
 // initialize cursors
@@ -128,7 +154,7 @@ SimpleSLL::remove (unsigned idx)
     }
 
 // save value of node we're deleting
-  int d = pCurr->data;
+  std::string d = pCurr->data;
 
 // first element? change head pointer
   if (pCurr == pHead)
@@ -153,7 +179,7 @@ SimpleSLL::remove (unsigned idx)
  * Print the list to standard output
  */
 void
-SimpleSLL::print () const const
+SimpleSLL::print () const 
 {
   using namespace std;
 
@@ -183,7 +209,7 @@ SimpleSLL::print () const const
  * Change the value at location idx to i.
  */
 void
-SimpleSLL::set (unsigned idx, int i)
+SimpleSLL::set (unsigned idx, std::string i)
 {
 // initialize cursor
   SimpleSLL::Node * pCurr = pHead;
