@@ -202,13 +202,32 @@ template <class T> SLL<T> &SLL<T>::operator=(const SLL<T> &list) {
  */
 template <class T> void SLL<T>::add(const T &d) {
   
+  
+  
+  //if this is the first element
+  if(n == 0){
+    // create new node
+    Node *pN = new Node(d, pHead);
+    // change head to point to new node
+    pHead = pN;
+    // increment size
+    n++;
+  }
+  
+  //if this will go before the first element
+  Node *pCurr = pHead;
+    if (pCurr->data > d) {
+          // create new node
+      Node *pN = new Node(d, pHead);
+      // change head to point to new node
+      pHead = pN;
+      // increment size
+      n++;
+    }
+    
 
-  // create new node
-  Node *pN = new Node(d, pHead);
-  // change head to point to new node
-  pHead = pN;
-  // increment size
-  n++;
+
+  
   
 }
 
