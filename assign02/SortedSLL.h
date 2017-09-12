@@ -214,12 +214,16 @@ template <class T> void SLL<T>::add(const T &d) {
   }
   
   //if this will go before the first element
-    if (pHead->data > pN->data) {
+    else if (pHead->data > pN->data) {
 
       // insert the new node before the current head
       pN->pNext = pHead;
       //update the head to the new node
       pHead = pN;
+    }
+    
+    else{
+    std::cout << "insert in the middle or end" << std::endl;      
     }
     
     
