@@ -201,12 +201,15 @@ template <class T> SLL<T> &SLL<T>::operator=(const SLL<T> &list) {
  * Add d to front of list.
  */
 template <class T> void SLL<T>::add(const T &d) {
+  
+
   // create new node
   Node *pN = new Node(d, pHead);
   // change head to point to new node
   pHead = pN;
   // increment size
   n++;
+  
 }
 
 /*
