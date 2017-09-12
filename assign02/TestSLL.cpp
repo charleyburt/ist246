@@ -30,6 +30,8 @@ int main() {
     cout << list << endl;
     list.add(9);
     cout << list << endl;
+    
+    //cout << "Initial list has " << list.size() << " nodes:" << endl;
 
 
   return EXIT_SUCCESS;
