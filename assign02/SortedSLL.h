@@ -2,7 +2,16 @@
 
 #include <iostream>
 #include <stdexcept>
-
+/**
+ * Class representing a simple singly-linked list of strings.
+ * 
+ * Modified the add() method so that the elements of the list
+ * are always in non-decreasing order.
+ *
+ * \authors <Charley Burtwistle, Logan>
+ * \date <September 13, 2017>
+ */
+ 
 //-----------------------------------------------------------
 // class definitions
 //-----------------------------------------------------------

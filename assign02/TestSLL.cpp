@@ -3,6 +3,13 @@
 #include <iostream>
 #include <string>
 
+/**
+ * Test Program to make sure the modified add() method works as expected
+ *
+ * \authors <Charley Burtwistle, Logan>
+ * \date <September 13, 2017>
+ */
+
 int main() {
 
   using namespace std;
