@@ -207,7 +207,7 @@ template <class T> SLL<T> &SLL<T>::operator=(const SLL<T> &list) {
 }
 
 /*
- * Add d to front of list.
+ * Add d to the list in "non-decreasing order".
  */
 template <class T> void SLL<T>::add(const T &d) {
   
