@@ -8,7 +8,7 @@
  * Modified the add() method so that the elements of the list
  * are always in non-decreasing order.
  *
- * \authors <Charley Burtwistle, Logan>
+ * \authors <Charley Burtwistle, Logan Wade>
  * \date <September 13, 2017>
  */
  
@@ -264,7 +264,7 @@ template <class T> void SLL<T>::add(const T &d) {
     
     //set the previous node to point to the new node
     pPrev->pNext = pN;
-  }
+    }
   }
   
   //increment size by one
