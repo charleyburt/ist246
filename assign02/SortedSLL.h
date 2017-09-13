@@ -201,13 +201,68 @@ template <class T> SLL<T> &SLL<T>::operator=(const SLL<T> &list) {
  * Add d to front of list.
  */
 template <class T> void SLL<T>::add(const T &d) {
-  // create new node
+  
+  //create a new Node
   Node *pN = new Node(d, pHead);
-  // change head to point to new node
-  pHead = pN;
-  // increment size
+  
+  //If the list is empty
+  if (pHead == 0){
+    //set the head to the new node
+    pHead = pN;
+    
+    // if the list is not empty
+  }else{
+    
+  // create cursors
+  Node *pCurr = pHead, *pPrev = 0;
+    
+  // iterate through the list
+  while(pCurr != 0){
+    
+    //if this is the location where node should be inserted
+    if(pCurr->data >= pN->data){
+      
+      //break out of while loop
+      break;
+      
+      //else this is not the location
+    }else{
+      
+      // "inchworm" up to next node
+      pPrev = pCurr;
+      pCurr = pCurr->pNext;
+    }
+    //and try again to see if this is the location
+  }//end while
+  
+  
+  // If where it needs to be inserted is at the head
+  if(pCurr == pHead){
+    
+    //set the new node to point to the old head
+    pN->pNext = pHead;
+    
+    //set the new node as the new head
+    pHead = pN;
+  }
+  
+  //else its going to be somewhere in the middle
+  //or, it didn't find anywhere in the middle, and will add it to the end (i.e. pCurr == 0)
+  else{
+    
+    //set the new node to point to the current node
+    pN->pNext = pCurr;
+    
+    //set the previous node to point to the new node
+    pPrev->pNext = pN;
+  }
+  }
+  
+  //increment size by one
   n++;
-}
+
+  
+}//end add
 
 /*
  * Delete all list nodes.
