@@ -391,13 +391,15 @@ template <class T> void SLL<T>::merge(const SLL<T> &listL, const SLL<T> &listM) 
     //else they are the correct size
     else{
     
-      //create variables to keep track of size  
-      int L_size = listL.size();
-      int M_size = listM.size();
+
           
   
       // remove any existing data
-        clear();
+      clear();
+        
+      //create variables to keep track of size  
+      int L_size = listL.size();
+      int M_size = listM.size();
       
         // initialize cursors, one for parameter and
         // one for this list
@@ -406,14 +408,23 @@ template <class T> void SLL<T>::merge(const SLL<T> &listL, const SLL<T> &listM) 
         //while M is still bigger
         // iterate through nodes in parameter list
         while (M_size > L_size) {
+          
+          pL = listM.pHead;
+          
+          // iterate cursor to postion
+          for (unsigned i = 0u; i < M_size-1 && pL != 0; i++) {
+            pL = pL->pNext;
+          }
           // special case: first node changes head pointer
           if (pHead == 0) {
             pHead = new Node(pL->data, 0);
             pCurr = pHead;
+
           } else {
             // general case: add new node to end of this list
             pCurr->pNext = new Node(pL->data, 0);
             pCurr = pCurr->pNext;
+
           }
       
           n++;
