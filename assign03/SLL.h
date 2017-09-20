@@ -172,6 +172,14 @@ public:
    */
   void set(unsigned idx, const T &d);
   
+  
+    /**
+   * Merge two lists into one
+   *
+   * \param listL 
+   *
+   * \param listM (must be at least as large as listL)
+   */
   void merge(const SLL<T> &listL, const SLL<T> &listM);
 
   /**
@@ -372,6 +380,10 @@ template <class T> void SLL<T>::copy(const SLL<T> &list) {
 }
 
 template <class T> void SLL<T>::merge(const SLL<T> &listL, const SLL<T> &listM) {
+
+    if (listL.size() > listM.size()){
+      throw std::out_of_range("The size of list M is not at least as large as the size of list L in SLL::merge()");
+    }
 
 }
 

@@ -12,7 +12,7 @@ int main() {
     SLL<int> list_M;
     SLL<int> list_LM;
     
-    list_LM.merge(list_L,list_M);
+
     
   //Create test arrays
   int case1_L [5] = {32,85,80,83,77};
@@ -39,6 +39,8 @@ int main() {
     cout << list_L << endl;
     cout << list_M << endl; 
     
+    list_LM.merge(list_L,list_M);
+    
     //clear lists
     list_L.clear();
     list_M.clear();
@@ -59,6 +61,8 @@ int main() {
     //output lists
     cout << list_L << endl;
     cout << list_M << endl; 
+    
+    list_LM.merge(list_L,list_M);
 
     //clear lists
     list_L.clear();
@@ -78,6 +82,8 @@ int main() {
     //output lists
     cout << list_L << endl;
     cout << list_M << endl; 
+    
+    list_LM.merge(list_L,list_M);
 
     //clear lists
     list_L.clear();
