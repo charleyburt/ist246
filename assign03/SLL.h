@@ -380,12 +380,59 @@ template <class T> void SLL<T>::copy(const SLL<T> &list) {
 }
 
 template <class T> void SLL<T>::merge(const SLL<T> &listL, const SLL<T> &listM) {
+    
 
+    
+    //if they are not the correct size
     if (listL.size() > listM.size()){
       throw std::out_of_range("The size of list M is not at least as large as the size of list L in SLL::merge()");
-    }
+    }//end if
+    
+    //else they are the correct size
+    else{
+    
+      //create variables to keep track of size  
+      int L_size = listL.size();
+      int M_size = listM.size();
+          
+  
+      // remove any existing data
+        clear();
+      
+        // initialize cursors, one for parameter and
+        // one for this list
+        Node *pL = listM.pHead, *pCurr = pHead;
+      
+        //while M is still bigger
+        // iterate through nodes in parameter list
+        while (M_size > L_size) {
+          // special case: first node changes head pointer
+          if (pHead == 0) {
+            pHead = new Node(pL->data, 0);
+            pCurr = pHead;
+          } else {
+            // general case: add new node to end of this list
+            pCurr->pNext = new Node(pL->data, 0);
+            pCurr = pCurr->pNext;
+          }
+      
+          n++;
+          pL = pL->pNext;
+          M_size --;
+        }//end while
+        //now they are the same size
+        //alternate adding them
 
-}
+
+    
+    //stuff***********
+    
+    
+    
+      
+    }//end else
+
+}//end merge()
 
 /*
  * Get iterator to one-past-the-last element of the list.

@@ -40,6 +40,7 @@ int main() {
     cout << list_M << endl; 
     
     list_LM.merge(list_L,list_M);
+    cout << list_LM << endl;
     
     //clear lists
     list_L.clear();
@@ -63,6 +64,7 @@ int main() {
     cout << list_M << endl; 
     
     list_LM.merge(list_L,list_M);
+    cout << list_LM << endl;
 
     //clear lists
     list_L.clear();
@@ -84,7 +86,8 @@ int main() {
     cout << list_M << endl; 
     
     list_LM.merge(list_L,list_M);
-
+    cout << list_LM << endl;
+    
     //clear lists
     list_L.clear();
     list_M.clear();    
