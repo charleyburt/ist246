@@ -379,71 +379,97 @@ template <class T> void SLL<T>::copy(const SLL<T> &list) {
   }
 }
 
+
+/**
+ * The following is our method to merge two lists together, using them as parameters.
+ * 
+ */
 template <class T> void SLL<T>::merge(const SLL<T> &listL, const SLL<T> &listM) {
     
 
     
-    //if they are not the correct size
+    //First, we're going to check to make sure that our second parameter is longer than our first.
     if (listL.size() > listM.size()){
       throw std::out_of_range("The size of list M is not at least as large as the size of list L in SLL::merge()");
     }//end if
     
-    //else they are the correct size
+    //If they are fine the way they are, we go through our else loop, merging the two lists.
     else{
-    
-
-          
-  
-      // remove any existing data
+      
+      //We start by removing any existing data from list LM.
       clear();
         
-      //create variables to keep track of size  
+      //Next, we have two variables which keep track of the size of our list. 
       int L_size = listL.size();
       int M_size = listM.size();
       
-        // initialize cursors, one for parameter and
-        // one for this list
-        Node *pL = listM.pHead, *pCurr = pHead;
+        // We Initialize cursors, two for our parameters and
+        // one for the new list
+        Node *pM = listM.pHead, *pL = listL.pHead, *pCurr = pHead;
       
-        //while M is still bigger
-        // iterate through nodes in parameter list
-        while (M_size > L_size) {
+        //while M is still bigger than L
+
+        while (M_size >= L_size && L_size !=0) {
           
-          pL = listM.pHead;
+          pM = listM.pHead;
           
-          // iterate cursor to postion
-          for (unsigned i = 0u; i < M_size-1 && pL != 0; i++) {
-            pL = pL->pNext;
+       
+          // iterate cursor to last postion
+          for (unsigned i = 0u; i < M_size-1 && pM != 0; i++) {
+            pM = pM->pNext;
           }
           // special case: first node changes head pointer
           if (pHead == 0) {
-            pHead = new Node(pL->data, 0);
+            pHead = new Node(pM->data, 0);
             pCurr = pHead;
 
           } else {
             // general case: add new node to end of this list
-            pCurr->pNext = new Node(pL->data, 0);
+            pCurr->pNext = new Node(pM->data, 0);
             pCurr = pCurr->pNext;
 
           }
+          
       
           n++;
-          pL = pL->pNext;
           M_size --;
-        }//end while
-        //now they are the same size
-        //alternate adding them
+          
+          if(M_size < L_size){
+            
+            
+            
+          pL = listL.pHead;
+          
+       
+          // iterate cursor to last postion
+          for (unsigned i = 0u; i < L_size-1 && pL != 0; i++) {
+            pL = pL->pNext;
+          }
 
+            // general case: add new node to end of this list
+            pCurr->pNext = new Node(pL->data, 0);
+            pCurr = pCurr->pNext;
 
-    
-    //stuff***********
-    
-    
-    
+          
       
+          n++;
+          L_size --;
+            
+            
+            
+          }//end if
+        }//end while
+        
     }//end else
+  }//end merge()
 
-}//end merge()
+
+
+
+
+
+
+
 
 /*
  * Get iterator to one-past-the-last element of the list.
