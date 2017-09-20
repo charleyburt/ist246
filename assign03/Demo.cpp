@@ -10,6 +10,9 @@ int main() {
     //create the two individual lists
     SLL<int> list_L;
     SLL<int> list_M;
+    SLL<int> list_LM;
+    
+    list_LM.merge(list_L,list_M);
     
   //Create test arrays
   int case1_L [5] = {32,85,80,83,77};

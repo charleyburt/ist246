@@ -171,6 +171,8 @@ public:
    * \param d New value to place in position idx.
    */
   void set(unsigned idx, const T &d);
+  
+  void merge(const SLL<T> &listL, const SLL<T> &listM);
 
   /**
    * Get the number of elements in the list.
@@ -225,6 +227,7 @@ private:
    * \param list SLL to copy.
    */
   void copy(const SLL<T> &list);
+  
 
   /** Pointer to the first Node in the list, or 0 if list is empty. */
   Node *pHead;
@@ -366,6 +369,10 @@ template <class T> void SLL<T>::copy(const SLL<T> &list) {
     n++;
     pL = pL->pNext;
   }
+}
+
+template <class T> void SLL<T>::merge(const SLL<T> &listL, const SLL<T> &listM) {
+
 }
 
 /*
